@@ -98,7 +98,7 @@ from tensorflow.keras.models import Model
 data = {
     'user_id': [1, 1, 2, 2, 3, 3],
     'property_id': [1, 2, 1, 3, 2, 3],
-    'rating': [5, 4, 3, 5, 1, 2]  # Replace with actual user ratings (e.g., 1-5 stars, 0/1 for liked/disliked)
+    'rating': [5, 4, 3, 5, 1, 2]  
 }
 df = pd.DataFrame(data)
 
@@ -152,22 +152,6 @@ user_input_train = df['user_index'].values
 property_input_train = df['property_index'].values
 ratings_train = df['rating'].values
 
-# Train the model (adjust epochs and batch_size as needed)
+
 model.fit([user_input_train, property_input_train], ratings_train, epochs=10, batch_size=32)
 
-# Predict interaction scores for new user-property pairs
-# ...
-
-# This is a basic example. You can extend it by:
-# - Incorporating user and property features (e.g., age, location, property size)
-# - Using more sophisticated embedding techniques (e.g., variational autoencoders)
-# - Implementing techniques like matrix factorization
-# - Evaluating the model using appropriate metrics (e.g., precision, recall, F1-score)
-
-**Note:**
-
-- This code assumes you have a dataset with user-property interactions and ratings. You'll need to adapt this to your specific data.
-- This is a simplified example, and real-world recommendation systems often require more complex models and techniques.
-- Consider using TensorFlow Recommenders, a high-level API built on TensorFlow, for more advanced recommendation system development.
-
-This provides a basic framework for building a recommendation system using TensorFlow. You can further enhance it by exploring different architectures, incorporating more data, and fine-tuning hyperparameters.
